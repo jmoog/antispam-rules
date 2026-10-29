@@ -1,29 +1,167 @@
 {
-  "version": "2026-06-03",
+  "version": "2026-10-29",
   "_doc": "Liste anti-spam centrale, partagée par tous les sites artisans. Source de vérité unique : héberger ce fichier sur une URL stable (ex. https://raw.githubusercontent.com/jmoog/antispam-rules/main/rules.json) et pointer SPAM_RULES_URL dessus sur chaque site. Les regex sont testées sur un texte NORMALISÉ (minuscules, accents retirés). Ne JAMAIS ajouter 'assurance' ou 'sinistre' seuls : les vrais clients toiture en parlent (déclaration de sinistre, expert).",
   "threshold": 5,
   "keywords": [
-    { "re": "\\bavis\\s+(google|positif|5\\s*etoile)", "flags": "i", "pts": 4, "label": "avis google" },
-    { "re": "\\b(google\\s+maps|trustpilot|tripadvisor|thumbtack|yelp)\\b", "flags": "i", "pts": 3, "label": "plateformes avis" },
-    { "re": "\\b(seo|referencement)\\s+(all\\s+)?service", "flags": "i", "pts": 3, "label": "seo service" },
-    { "re": "marketing\\s+digital", "flags": "i", "pts": 3, "label": "marketing digital" },
-    { "re": "\\b(premiere|1ere)\\s+page\\s+(de\\s+)?google", "flags": "i", "pts": 3, "label": "1ere page google" },
-    { "re": "\\bfreelance\\b", "flags": "i", "pts": 2, "label": "freelance" },
-    { "re": "\\b(rank|ranking|classement)\\b.*\\bgoogle\\b", "flags": "i", "pts": 2, "label": "ranking google" },
-    { "re": "\\b(boost|propuls|promo(tion|uvoir))\\b.*\\b(entreprise|business|vente)", "flags": "i", "pts": 2, "label": "boost business" },
-    { "re": "\\b(backlink|backlinks|guest\\s*post)\\b", "flags": "i", "pts": 3, "label": "backlinks" },
-    { "re": "\\b(whatsapp|telegram|skype)\\b", "flags": "i", "pts": 2, "label": "messagerie demarchage" },
-    { "re": "\\borias\\b", "flags": "i", "pts": 5, "label": "orias" },
-    { "re": "\\bcourtier\\b", "flags": "i", "pts": 4, "label": "courtier" },
-    { "re": "\\b(renegocie|renegocier|ajuster)\\b.*\\bcontrat", "flags": "i", "pts": 3, "label": "renegocier contrats" },
-    { "re": "\\bprime(s)?\\s+d['e\\s]assurance", "flags": "i", "pts": 3, "label": "primes assurance" },
-    { "re": "\\bsans\\s+engagement\\b", "flags": "i", "pts": 2, "label": "sans engagement" },
-    { "re": "\\b(economies|economie)\\b.*\\b(prime|contrat|cotisation)", "flags": "i", "pts": 2, "label": "economies primes" }
+    {
+      "re": "\\bavis\\s+(google|positif|5\\s*etoile)",
+      "flags": "i",
+      "pts": 4,
+      "label": "avis google"
+    },
+    {
+      "re": "\\b(google\\s+maps|trustpilot|tripadvisor|thumbtack|yelp)\\b",
+      "flags": "i",
+      "pts": 3,
+      "label": "plateformes avis"
+    },
+    {
+      "re": "\\b(seo|referencement)\\s+(all\\s+)?service",
+      "flags": "i",
+      "pts": 3,
+      "label": "seo service"
+    },
+    {
+      "re": "marketing\\s+digital",
+      "flags": "i",
+      "pts": 3,
+      "label": "marketing digital"
+    },
+    {
+      "re": "\\b(premiere|1ere)\\s+page\\s+(de\\s+)?google",
+      "flags": "i",
+      "pts": 3,
+      "label": "1ere page google"
+    },
+    {
+      "re": "\\bfreelance\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "freelance"
+    },
+    {
+      "re": "\\b(rank|ranking|classement)\\b.*\\bgoogle\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "ranking google"
+    },
+    {
+      "re": "\\b(boost|propuls|promo(tion|uvoir))\\b.*\\b(entreprise|business|vente)",
+      "flags": "i",
+      "pts": 2,
+      "label": "boost business"
+    },
+    {
+      "re": "\\b(backlink|backlinks|guest\\s*post)\\b",
+      "flags": "i",
+      "pts": 3,
+      "label": "backlinks"
+    },
+    {
+      "re": "\\b(whatsapp|telegram|skype)\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "messagerie demarchage"
+    },
+    {
+      "re": "\\borias\\b",
+      "flags": "i",
+      "pts": 5,
+      "label": "orias"
+    },
+    {
+      "re": "\\bcourtier\\b",
+      "flags": "i",
+      "pts": 4,
+      "label": "courtier"
+    },
+    {
+      "re": "\\b(renegocie|renegocier|ajuster)\\b.*\\bcontrat",
+      "flags": "i",
+      "pts": 3,
+      "label": "renegocier contrats"
+    },
+    {
+      "re": "\\bprime(s)?\\s+d['e\\s]assurance",
+      "flags": "i",
+      "pts": 3,
+      "label": "primes assurance"
+    },
+    {
+      "re": "\\bsans\\s+engagement\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "sans engagement"
+    },
+    {
+      "re": "\\b(economies|economie)\\b.*\\b(prime|contrat|cotisation)",
+      "flags": "i",
+      "pts": 2,
+      "label": "economies primes"
+    },
+    {
+      "re": "\\bhocquet\\b",
+      "flags": "i",
+      "pts": 6,
+      "label": "spam Hocquet (oct. 2026)"
+    },
+    {
+      "re": "\\b(mondocs|monpartage|mesdocs|mondossier|mesfichiers)\\b|\\.my\\.id\\b",
+      "flags": "i",
+      "pts": 5,
+      "label": "lien faux dossier"
+    },
+    {
+      "re": "https?://\\S+/btp/",
+      "flags": "i",
+      "pts": 3,
+      "label": "lien /btp/"
+    },
+    {
+      "re": "\\b(tout\\s+le\\s+dossier|dossier\\s+complet|a\\s+lire\\s+sur|consultez?\\s+le\\s+dossier|voir\\s+le\\s+document)\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "renvoi vers un dossier"
+    },
+    {
+      "re": "\\bmontreal\\b",
+      "flags": "i",
+      "pts": 2,
+      "label": "ville hors zone"
+    }
   ],
-  "phonePrefixes": ["+880", "+234", "+92", "+91", "+233", "+212255"],
+  "phonePrefixes": [
+    "+880",
+    "+234",
+    "+92",
+    "+91",
+    "+233",
+    "+212255"
+  ],
   "english": {
-    "words": ["your", "business", "service", "please", "will", "contact", "provide", "expert", "verified", "review"],
+    "words": [
+      "your",
+      "business",
+      "service",
+      "please",
+      "will",
+      "contact",
+      "provide",
+      "expert",
+      "verified",
+      "review"
+    ],
     "minHits": 4,
     "pts": 2
-  }
+  },
+  "blocklist": {
+    "emailDomains": [
+      "prodmail.online"
+    ],
+    "phones": [
+      "0660826732"
+    ],
+    "pts": 10
+  },
+  "linkPts": 3
 }
